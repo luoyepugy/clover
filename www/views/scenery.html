@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles/app.min.css" data-skrollr-stylesheet />
+<title>风光</title>
+</head>
+<body>
+    <div class="view-parallax">
+        <div class="header">
+            <div class="nav">
+                <div class="logo"><a title="首页" href="../index.html"><img src="../images/logo.png" alt="logo" /></a></div>
+                <ul>
+                    <li><a title="精选" href="recommend.html">精选</a></li>
+                    <li><a class="active" title="风光" href="scenery.html">风光</a></li>
+                    <li><a title="微距" href="macro.html">微距</a></li>
+                    <li><a title="人物" href="person.html">人物</a></li>
+                    <li><a title="联系我们" href="contact_us.html">联系我们</a></li>
+                    <li class="sound"><span title="音频 开/关" class="soundOff"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="scenery_img1"></div>
+            <div class="middle">
+                <h3 class="title">有一种美，叫大自然的鬼斧神工</h3>
+                <p class="more"><a href="macro_list.html">查看更多</a></p>
+            </div>
+            <div class="scenery_img2"></div>
+        </div>
+    </div>
+    <script data-main="../js/app.js" src="../js/libs/requirejs/require.js"></script>
+    <script type="text/javascript">
+        require(['../js/prallax']);
+    </script>
+</body>
+</html>

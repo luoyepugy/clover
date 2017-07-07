@@ -1,0 +1,1 @@
+define(["skrollr"],function(n){$(function(){n.init()})});

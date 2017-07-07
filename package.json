@@ -1,0 +1,24 @@
+{
+  "name": "clover",
+  "version": "1.0.0",
+  "description": "clover",
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "connect-livereload": "^0.6.0",
+    "gulp": "^3.5.6",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-group-files": "^2.0.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-requirejs-optimize": "^0.3.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-spritesmith": "0.0.2",
+    "gulp-uglify": "^1.4.1",
+    "imagemin-pngquant": "^4.2.0",
+    "isotope-layout": "^3.0.4"
+  }
+}

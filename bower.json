@@ -1,0 +1,25 @@
+{
+  "name": "clover",
+  "description": "clover",
+  "main": "",
+  "authors": [
+    "zhanghan"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "imagesloaded": "^4.1.3",
+    "isotope": "^3.0.4",
+    "skrollr": "^0.6.30",
+    "seajs": "^3.0.0"
+  }
+}

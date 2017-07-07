@@ -1,0 +1,1 @@
+define(["isotope"],function(i){jQuery(document).ready(function(i){var t=i("#grid").imagesLoaded(function(){t.isotope({itemSelector:".grid-item",percentPosition:!0,layoutMode:"masonry",masonry:{gutter:15}})}),e=i(".grid-item");e.hover(function(){i(this).siblings(".grid-item").css("opacity",".5")},function(){i(this).siblings(".grid-item").css("opacity","1")})})});

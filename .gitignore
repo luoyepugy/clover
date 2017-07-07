@@ -1,0 +1,8 @@
+node_modules
+build
+dist
+zip
+docs
+src
+.DS_Store
+~
