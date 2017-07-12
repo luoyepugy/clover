@@ -1,7 +1,21 @@
 {
   "name": "clover",
-  "version": "1.0.0",
-  "description": "clover",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "express": "~4.15.2",
+    "gulp-express": "^0.3.5",
+    "gulp-live-server": "^0.0.30",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
+  },
   "devDependencies": {
     "browser-sync": "^2.9.3",
     "connect-livereload": "^0.6.0",
@@ -13,6 +27,7 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-jshint": "^1.11.2",
     "gulp-load-plugins": "^0.10.0",
+    "gulp-nodemon": "^2.2.1",
     "gulp-rename": "^1.2.0",
     "gulp-requirejs-optimize": "^0.3.0",
     "gulp-sass": "^2.3.2",

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/styles/app.min.css' />
+  </head>
+  <body>
+    <div class="header">
+        <div class="nav">
+            <div class="logo">
+                <a title="首页" href="/"></a>
+            </div>
+            <ul>
+                <li><a data-name="recommend" title="精选" href="/recommend">精选</a></li>
+                <li><a data-name="scenery" title="风光" href="/scenery">风光</a></li>
+                <li><a data-name="macro" title="微距" href="/macro">微距</a></li>
+                <li><a data-name="person" title="人物" href="/person">人物</a></li>
+                <li><a data-name="contactUs" title="联系我们" href="/contactUs">联系我们</a></li>
+                <li class="sound"><span title="音频 开/关" class="soundOff j-sound"></span></li>
+            </ul>
+        </div>
+    </div>
+    <audio id="audio" preload="auto" loop="loop">
+        <source src="/media/audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script data-main="/js/main.js" src="/js/libs/requirejs/require.js"></script>
+    <script type="text/javascript">
+        require(['/js/common.js']);
+    </script>
+        
+    

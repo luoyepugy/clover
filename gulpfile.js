@@ -2,7 +2,10 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     pngquant = require('imagemin-pngquant'),
     spritesmith = require('gulp-spritesmith'),
-    browserSync = require('browser-sync').create();
+    nodemon = require('gulp-nodemon'),
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload;
+
 
 // css
 gulp.task('css',function (){
@@ -17,18 +20,18 @@ gulp.task('css',function (){
             remove:true
         }))
         .pipe(plugins.rename({ suffix: '.min' }))
-        .pipe(gulp.dest("./www/styles/"));
+        .pipe(gulp.dest("./public/styles/"));
 });
 
 
 // js
 gulp.task('js', function() {
-  return gulp.src('src/js/**/*.js')
+  return gulp.src('./src/js/**/*.js')
     .pipe(plugins.jshint('.jshintrc'))
     .pipe(plugins.jshint.reporter('default'))
     .pipe(plugins.uglify())
     // .pipe(plugins.rename({ extname: '.min.js' }))
-    .pipe(gulp.dest('./www/js/'));
+    .pipe(gulp.dest('./public/js/'));
 });
 
 
@@ -40,7 +43,7 @@ gulp.task('images', function () {
             svgoPlugins: [{removeViewBox: false}],  //不要移除svg的viewbox属性
             use: [pngquant()]                       //使用pngquant深度压缩png图片的imagemin插件
         }))
-        .pipe(gulp.dest('./www/images/'));
+        .pipe(gulp.dest('./public/images/'));
 });
 
 // 雪碧图
@@ -52,38 +55,54 @@ gulp.task('sprite', function() {
                 cssName: 'sprite.css',
         }));
 
-    spriteData.images.pipe(gulp.dest('./www/styles/sprite/')); // output path for the sprite
-    spriteData.css.pipe(gulp.dest('./www/styles/sprite/')); // output path for the CSS
+    spriteData.images.pipe(gulp.dest('./public/styles/sprite/')); // output path for the sprite
+    spriteData.css.pipe(gulp.dest('./public/styles/sprite/')); // output path for the CSS
 });
 
 // 清空图片、样式、js
 gulp.task('clean', function() {
-    gulp.src(['www/styles/', 'www/js/', 'www/images/'], {read: false})
+    gulp.src(['public/styles/', 'public/js/', 'public/images/'], {read: false})
         .pipe(plugins.clean());
 });
 
+// node
+gulp.task('node', function () {
+  nodemon({
+    script: './bin/www'
+  , ext: 'js ejs html'
+  , env: { 'NODE_ENV': 'development' }
+  })
+});
 
 // 监听
-gulp.task('watch', function() {
+gulp.task('serve', ['node'], function() {
 
     gulp.watch('src/scss/**/*.scss', ['css']);
     gulp.watch('src/js/**/*.js', ['js']);
 
     var files = [
-      'www/**/*.html',
-      'www/styles/**/*.css',
-      'www/images/**/*',
-      'www/js/**/*.js'
+      'views/**/*.ejs',
+      'public/**/**/*.*'
     ];
 
     browserSync.init(files, {
-      server: {
-         baseDir: './www/'
-      }
+      // server: {
+      //    baseDir: './'
+      // }
+      proxy: 'http://localhost:3000',
+      browser: 'google chrome',
+      port: 3002,
+      notify: true
     });
+
+    gulp.watch(files).on("change", reload);
     
 });
 
 // 默认任务
 gulp.task('default', ['watch']);
 gulp.task('cssprite', ['icon','sprite']);
+
+
+
+

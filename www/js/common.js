@@ -1,1 +1,0 @@
-define(["jquery"],function(n){n(function(){var u=n("#audio")[0];n(".j-sound").click(function(){n(this).toggleClass("soundOff"),u.paused?u.play():u.pause()})})});
