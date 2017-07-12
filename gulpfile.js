@@ -37,7 +37,7 @@ gulp.task('js', function() {
 
 // 图片压缩
 gulp.task('images', function () {
-    return gulp.src('./src/images/*')
+    return gulp.src('./src/images/**/*')
         .pipe(plugins.imagemin({
             progressive: true,                      //类型：Boolean 默认：false 无损压缩jpg图片
             svgoPlugins: [{removeViewBox: false}],  //不要移除svg的viewbox属性
@@ -75,10 +75,11 @@ gulp.task('node', function () {
 });
 
 // 监听
-gulp.task('serve', ['node'], function() {
+gulp.task('serve', ['images', 'css', 'js', 'node'], function() {
 
     gulp.watch('src/scss/**/*.scss', ['css']);
     gulp.watch('src/js/**/*.js', ['js']);
+    gulp.watch('src/images/**.*', ['images']);
 
     var files = [
       'views/**/*.ejs',
