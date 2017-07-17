@@ -1,0 +1,59 @@
+
+// ============= 风光/人物/微距 视差动画 ===========
+.view-parallax {
+	
+	$names: person macro scenery;
+	@each $name in $names { 
+		.#{$name}_img1,
+		.#{$name}_img2 {
+			height: 650px;
+			overflow: hidden;
+		}
+
+		.#{$name}_img1 { 
+			background-image: url(/static/#{$name}_1.jpg);
+			background-position: 0 0;
+			-skrollr-animation-name: animation1;
+		}
+		.#{$name}_img2 { 
+			background-image: url(/static/#{$name}_2.jpg);
+			background-position: 0 0;
+			-skrollr-animation-name: animation3;
+		}
+	}
+
+	.middle {
+		-skrollr-animation-name: animation2;
+	}
+	
+	@-skrollr-keyframes animation1 {
+		0 {
+			background-position: 0 0px;
+		}
+		100 {
+			background-position: 0 -100px;
+		}
+		300 {
+			background-position: 0 -200px;
+		}
+	}
+	@-skrollr-keyframes animation2 {
+		500 {
+			background-color: rgb(55, 52, 49);
+		}
+		900 {
+			background-color: rgb(0, 0, 0);
+		}
+	}
+	@-skrollr-keyframes animation3 {
+		0-bottom {
+			background-position: 0 -200px;
+		}
+		100-bottom {
+			background-position: 0 -100px;
+		}
+		300 {
+			background-position: 0 0px;
+		}
+	}
+}
