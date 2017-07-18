@@ -11,26 +11,20 @@ img {
 a {
 	color: $textColor;
 	text-decoration: none;
+	&.active {
+		color: #000;
+	}
 }
 
-// // 导航
+// 导航
 // .header {
-// 	background-color: rgba(255, 255, 255, 1);
+// 	background: #fff;
 // 	height: 70px;
 // 	width: 100%;
 // 	position: fixed;
 // 	top: 0;
 // 	left: 0;
-// 	z-index: 7;
-	
-// 	@keyframes rotate{
-//      	0%{
-//          	transform : rotate(0deg);
-//      	}
-//      	100%{
-//          	transform : rotate(360deg);
-//      	}
-//  	}
+// 	z-index: 2;
 
 // 	.logo {
 // 		width: 70px;
@@ -38,21 +32,6 @@ a {
 // 		float: left;
 // 		cursor: pointer;
 // 		margin-right: 75px;
-// 		background-image: url('./assets/images/logo.png');
-// 		background-size: cover;
-
-// 		a {
-// 			display: block;
-// 			height: 70px;			
-// 		}
-		
-// 		&:hover {
-// 			// transform: rotate(360deg);
-// 			// transition: transform 3s;
-// 			// transform-origin: center center;
-// 			animation: rotate 5s infinite;
-// 			animation-play-state: running;
-// 		}
 // 	}
 
 // 	.nav {
@@ -64,14 +43,6 @@ a {
 // 			margin-left: 50px;
 // 			text-align: center;
 // 			line-height: 70px;
-// 			a:hover {
-// 				color: #000;
-// 			}
-// 			&.active {
-// 				a {
-// 					color: #000;
-// 				}
-// 			}
 // 		}
 
 // 		@keyframes soundOff{
@@ -88,7 +59,7 @@ a {
 // 			width: 30px;
 // 		    height: 25px;
 // 		    display: inline-block;
-// 		    background: url(./assets/images/sprite-sound.png) no-repeat;
+// 		    background: url(/static/sprite-sound.png) no-repeat;
 // 		    margin-top: 0;
 // 		    cursor: pointer;
 // 		    animation: soundOn .5s steps(13) 1;
@@ -105,6 +76,8 @@ a {
 .content {
 	width: 100%;
 	padding-top: 70px;
+	opacity: .97;
+	overflow: hidden;
 
 	.middle {
 		background-color: rgb(55, 52, 49);
@@ -141,34 +114,23 @@ a {
 	}
 }
 
-// // 加载动画
-// .loading {
-// 	width: 0%;
-// 	position: fixed;
-// 	top: 0;
-// 	height: 3px;
-// 	background: $backColor;
-// 	z-index: 3;
-// 	transition: width .5s;
+// 底部版权
+// .footer {
+// 	height: 200px;
+// 	line-height: 200px;
+// 	text-align: center;
 // }
 
-// 底部版权
-.footer {
-	height: 200px;
-	line-height: 200px;
-	text-align: center;
-}
-
 // ================== 瀑布流列表 ================
-.view-list {
-	.grid {
-		margin-bottom: -15px;
-	}
-	.grid-item { 
-		width: calc((100% - 45px)/ 4);
-		margin-bottom: 15px;
-		opacity: 1;
-		transition: opacity 1s;
-		cursor: pointer;
-	}
-}
+// .view-list {
+// 	.grid {
+// 		margin-bottom: -15px;
+// 	}
+// 	.grid-item { 
+// 		width: calc((100% - 45px)/ 4);
+// 		margin-bottom: 15px;
+// 		opacity: 1;
+// 		transition: opacity 1s;
+// 		cursor: pointer;
+// 	}
+// }

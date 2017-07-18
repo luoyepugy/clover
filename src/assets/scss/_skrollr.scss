@@ -11,12 +11,12 @@
 		}
 
 		.#{$name}_img1 { 
-			background-image: url(/static/#{$name}_1.jpg);
+			background-image: url('/static/#{$name}_1.jpg');
 			background-position: 0 0;
 			-skrollr-animation-name: animation1;
 		}
 		.#{$name}_img2 { 
-			background-image: url(/static/#{$name}_2.jpg);
+			background-image: url('/static/#{$name}_2.jpg');
 			background-position: 0 0;
 			-skrollr-animation-name: animation3;
 		}

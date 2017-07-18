@@ -1,12 +1,12 @@
 <template>
   <div>
-     <div class="view-contactUs">
-        <div class="form">
-            <p>姓名<input type="text" name="name" value="" /></p>
-            <p>邮箱<input type="text" name="email" value="" /></p>
-            <p>信息<input type="text" name="message" value="" /></p>
-            <p><span class="button">发送</span></p>
-        </div>
+    <div class="view-contactUs">
+      <div class="form">
+          <p>姓名<input type="text" name="name" value="" maxlength="10" required /></p>
+          <p>邮箱<input type="email" name="email" value="" required /></p>
+          <p>信息<input type="text" name="message" value="" maxlength="100" required /></p>
+          <p><span class="button" id="btn-submit" @click="submitForm">发送</span></p>
+      </div>
     </div>
     <div class="footer">© Copyright 2017. Clover</div>
   </div>
@@ -25,7 +25,10 @@ export default {
 
   },
   methods: {
+    submitForm() {
+      var that = this;
 
+    }
   }
 }
 </script>
@@ -75,6 +78,7 @@ export default {
       border: 0;
       outline: none;
       background: transparent;
+      color: #878075;
     }
     .button {
       line-height: 45px;
@@ -85,9 +89,16 @@ export default {
       height: 45px;
 
       text-align: center;
+      cursor: pointer;
 
       border: 1px solid #878075;
     }
   }
+}
+
+.footer {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
 }
 </style>

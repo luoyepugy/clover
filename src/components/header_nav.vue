@@ -8,11 +8,6 @@
             </div>
             <ul>
               <li v-for="item in list"><a :data-name="item.name" :title="item.text" @click="routeGo(item.name)">{{item.text}}</a></li>
-                <!-- <li><a data-name="recommend" title="精选" @click="routeGo('recommend')">精选</a></li>
-                <li><a data-name="scenery" title="风光" @click="routeGo('scenery')">风光</a></li>
-                <li><a data-name="macro" title="微距" @click="routeGo('macro')">微距</a></li>
-                <li><a data-name="person" title="人物" @click="routeGo('person')">人物</a></li>
-                <li><a data-name="contactUs" title="联系我们" @click="routeGo('contactUs')">联系我们</a></li> -->
               <li class="sound"><span title="音频 开/关" :class="{'soundOff': !soundOn}" @click="switchAudio"></span></li>
             </ul>
         </div>
@@ -20,7 +15,7 @@
     <!-- /头部导航 -->
     <!-- 音频文件 -->
     <audio id="audio" preload="auto" loop="loop">
-        <source src="../assets/media/audio.mp3" type="audio/mpeg">
+        <source src="/static/media/audio.mp3" type="audio/mpeg">
     </audio>
     <!-- /音频文件 -->
     <!-- 加载动画 -->
@@ -53,8 +48,7 @@ export default {
       },{
         name: 'contactUs',
         text: '联系我们'
-      }],
-      curRoute: 'index'
+      }]
     }
   },
   created() {
@@ -72,7 +66,7 @@ export default {
       }
     },
     loading() {
-      var route = this.$route.name;
+      var route = window.location.path;
       
       $('.nav ul').find('a[data-name="' + route + '"]').parent().addClass('active').siblings('li').removeClass('active');
 
@@ -118,7 +112,7 @@ export default {
     float: left;
     cursor: pointer;
     margin-right: 75px;
-    background-image: url('../assets/images/logo.png');
+    background-image: url(/static/logo.png);
     background-size: cover;
 
     
@@ -162,7 +156,7 @@ export default {
       width: 30px;
         height: 25px;
         display: inline-block;
-        background: url(../assets/images/sprite-sound.png) no-repeat;
+        background: url(/static/sprite-sound.png) no-repeat;
         margin-top: 0;
         cursor: pointer;
         animation: soundOn .5s steps(13) 1;

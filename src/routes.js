@@ -1,5 +1,4 @@
 
-// import Hello from '@/components/Hello'
 import Index from '@/views/index'
 import Recommend from '@/views/recommend'
 import Macro from '@/views/macro'
@@ -11,11 +10,6 @@ import SceneryList from '@/views/scenery_list'
 import ContactUs from '@/views/contact_us'
 
 let routes = [
-  // {
-  //   path: '/',
-  //   name: 'Hello',
-  //   component: Hello
-  // },
   {
     path: '/',
     name: 'index',
