@@ -1,16 +1,11 @@
 <template>
-  <div class="view-parallax">
-        <div class="scenery_img1"></div>
-        <div class="middle">
-            <h3 class="title">有一种美，叫大自然的鬼斧神工</h3>
-            <p class="more"><a @click="routeGo('sceneryList')">查看更多</a></p>
-        </div>
-        <div class="scenery_img2"></div>
-    </div>
+  <div>
+    <prallax name="scenery" title="有一种美，叫大自然的鬼斧神工" detailRoute="sceneryList"></prallax>
+  </div>
 </template>
 
 <script>
-import Skrollr from 'skrollr'
+import prallax from '../components/prallax.vue'
 
 export default {
   name: 'macro',
@@ -20,7 +15,10 @@ export default {
     }
   },  
   created() {
-    var s = Skrollr.init();
+
+  },
+  components: {
+    prallax
   },
   methods: {
 
@@ -30,5 +28,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import '../assets/scss/_skrollr.scss'
+
 </style>

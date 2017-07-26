@@ -5,13 +5,15 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import routes from './routes'
+import $ from 'jquery'
 
 Vue.config.productionTip = false
 
 // ====================== Install Router ======================
 Vue.use(VueRouter)
 
-const router = new VueRouter({
+
+window.router  = new VueRouter({
   mode: 'hash',
   routes,
   scrollBehavior(to, from, savedPosition) {
@@ -30,6 +32,28 @@ const router = new VueRouter({
 Vue.prototype.routeGo = function (name, params) {
   this.$router.push({'name': name, 'params': params});
 }
+
+router.beforeEach((to, from, next) => {
+  // 对于需要登录的页面，检查用户是否已经登录
+  $('.loading').css('width', '0%').show();
+
+  if (to.matched.some(record => record.meta.auth)) {
+    // if (!signedIn()) {
+    //   next({ path: '/signin', query: { redirect: to.fullPath } })
+    // } else {
+    //   next()
+    // }
+  } else {
+    next()
+  }
+});
+
+router.afterEach((to, from, next) => {
+  $('.loading').css('width', '100%').one("webkitTransitionEnd otransitionend transitionend",function(){
+    $(this).hide();
+  });
+  window.scrollTo(0, 0);
+});
 
 /* eslint-disable no-new */
 new Vue({

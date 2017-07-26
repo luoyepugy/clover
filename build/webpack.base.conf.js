@@ -39,10 +39,10 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },
-      {
-        test: /\.scss$/,
-        loaders: ExtractTextPlugin.extract('css-loader!sass-loader')
-      },
+      // {
+      //   test: /\.scss$/,
+      //   loaders: ExtractTextPlugin.extract('css-loader!sass-loader')
+      // },
       {
         test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
         loader: 'url-loader',

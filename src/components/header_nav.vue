@@ -7,20 +7,17 @@
                 <a title="首页" data-name="index" @click="routeGo('index')"></a>
             </div>
             <ul>
-              <li v-for="item in list"><a :data-name="item.name" :title="item.text" @click="routeGo(item.name)">{{item.text}}</a></li>
+              <li v-for="item in list"><a :class="{true: 'active'}[item.name == $route.name]" :title="item.text" @click="routeGo(item.name)">{{item.text}}</a></li>
               <li class="sound"><span title="音频 开/关" :class="{'soundOff': !soundOn}" @click="switchAudio"></span></li>
             </ul>
         </div>
     </div>
     <!-- /头部导航 -->
     <!-- 音频文件 -->
-    <audio id="audio" preload="auto" loop="loop">
+    <audio ref="audio" id="audio" preload="auto" loop="loop">
         <source src="/static/media/audio.mp3" type="audio/mpeg">
     </audio>
     <!-- /音频文件 -->
-    <!-- 加载动画 -->
-    <div class="loading"></div>
-    <!-- /加载动画 -->
   </div>
 </template>
 
@@ -52,27 +49,18 @@ export default {
     }
   },
   created() {
-    this.loading();
+
   },
   methods: {
     switchAudio() {
       var audio = $("#audio")[0];  
-
       this.soundOn = !this.soundOn;
+
       if(audio.paused) {
         audio.play();  
       } else {
         audio.pause();  
       }
-    },
-    loading() {
-      var route = window.location.path;
-      
-      $('.nav ul').find('a[data-name="' + route + '"]').parent().addClass('active').siblings('li').removeClass('active');
-
-      $('.loading').css('width', '100%').one("webkitTransitionEnd otransitionend transitionend",function(){
-        $(this).hide();
-      });
     }
   }
 }
@@ -114,8 +102,6 @@ export default {
     margin-right: 75px;
     background-image: url(/static/logo.png);
     background-size: cover;
-
-    
     
     &:hover {
       animation: rotate 5s infinite;
@@ -167,15 +153,5 @@ export default {
         }
     }
   }
-}
-/*加载动画*/
-.loading {
-  width: 0%;
-  position: fixed;
-  top: 0;
-  height: 3px;
-  background: #302d2a;
-  z-index: 3;
-  transition: width .5s;
 }
 </style>

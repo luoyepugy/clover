@@ -1,26 +1,24 @@
 <template>
-  <div class="view-parallax">
-        <div class="person_img1"></div>
-        <div class="middle">
-            <p class="title">因为简单，所以快乐</p>
-            <p class="more"><a @click="routeGo('personList')">查看更多</a></p>
-        </div>
-        <div class="person_img2"></div>
-    </div>
+  <div>
+    <prallax name="person" title="因为简单，所以快乐" detailRoute="personList"></prallax>
+  </div>
 </template>
 
 <script>
-import Skrollr from 'skrollr'
+import prallax from '../components/prallax.vue'
 
 export default {
-  name: 'macro',
+  name: 'person',
   data () {
     return {
       
     }
   },  
   created() {
-    var s = Skrollr.init();
+
+  },
+  components: {
+    prallax
   },
   methods: {
 
@@ -30,5 +28,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import '../assets/scss/_skrollr.scss'
+
 </style>
