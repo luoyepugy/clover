@@ -1,0 +1,136 @@
+
+@import 'variable';
+
+body {
+	color: $textColor;
+	font-family: '微软雅黑';
+}
+img {
+	max-width: 100%;
+}
+a {
+	color: $textColor;
+	text-decoration: none;
+	&.active {
+		color: #000;
+	}
+}
+
+// 导航
+.header {
+	background: #fff;
+	height: 70px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+
+	.logo {
+		width: 70px;
+		height: 70px;
+		float: left;
+		cursor: pointer;
+		margin-right: 75px;
+	}
+
+	.nav {
+		width: 920px;
+		margin: 0 auto;
+		li {
+			display: inline-block;
+			width: 74px;
+			margin-left: 50px;
+			text-align: center;
+			line-height: 70px;
+		}
+
+		@keyframes soundOff{
+			from{ background-position:0 }
+			to{ background-position: -403px; }
+		}
+		@keyframes soundOn{
+			from{background-position:-372px}
+			to{background-position:-775px}
+		}
+		.sound span {
+			position: relative;
+			top: 7px;
+			width: 30px;
+		    height: 25px;
+		    display: inline-block;
+		    background: url(../images/sprite-sound.png) no-repeat;
+		    margin-top: 0;
+		    cursor: pointer;
+		    animation: soundOn .5s steps(13) 1;
+
+		    &.soundOff {
+		    	background-position: -372px 0;
+    			animation: soundOff .5s steps(13) 1;
+		    }
+		}
+	}
+}
+
+// 内容
+.content {
+	width: 100%;
+	padding-top: 70px;
+	opacity: .97;
+	overflow: hidden;
+
+	.middle {
+		background-color: rgb(55, 52, 49);
+		text-align: center;
+		height: 400px;
+		position: relative;
+		
+		&:hover {
+			.more {
+				opacity: 1;
+			}
+		}
+
+		.title {
+			font-size: 3.6rem;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			height: 60px;
+			margin: auto 0;
+			width: 100%;
+		}
+
+		.more {
+			text-align: right;
+			font-size: 1.4rem;
+			position: relative;
+			top: 65%;
+			width: 920px;
+			margin: 0 auto;
+			opacity: 0;
+			transition: opacity .7s;
+		}
+	}
+}
+
+// 底部版权
+.footer {
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+}
+
+// ================== 瀑布流列表 ================
+.view-list {
+	.grid {
+		margin-bottom: -15px;
+	}
+	.grid-item { 
+		width: calc((100% - 45px)/ 4);
+		margin-bottom: 15px;
+		opacity: 1;
+		transition: opacity 1s;
+		cursor: pointer;
+	}
+}

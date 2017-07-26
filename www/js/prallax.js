@@ -1,1 +1,1 @@
-define(["jquery","skrollr"],function(n,i){n(function(){i.init()})});
+define(["skrollr"],function(n){$(function(){n.init()})});

@@ -1,0 +1,174 @@
+
+// ==================== 首页 ====================
+.view-index {
+    .slider-item {
+        height: 110%;
+        width: 110%;
+        
+        &:nth-child(1) {
+            background-image: url('../images/index_1.jpg');
+            z-index: 2;
+        }
+        &:nth-child(2) {
+            background-image: url('../images/index_2.jpg');
+            opacity: 0;
+        }
+        &:nth-child(3) {
+            background-image: url('../images/index_3.jpg');
+            opacity: 0;
+        }
+        &:nth-child(4) {
+            background-image: url('../images/index_4.jpg');
+            opacity: 0;
+        }
+
+        &.active {
+            transform: scale3d(1.1,1.1,1) translate3d(-10%,-10%,0);
+        }
+        
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 70px;
+        transition: opacity 1s, transform 8s;
+        // transform: scale3d(1.1,1.1,1) translate3d(-10%,-10%,0);
+        z-index: 1;
+    }
+    .sliderLink {
+        position: absolute;
+        z-index: 100;
+        top: calc(50% + 35px);
+
+        width: 28px;
+        height: 28px;
+
+        cursor: pointer;
+        cursor: pointer;
+        transition: all .3s;
+
+        border-top: 2px solid #fff;
+        outline: 0!important;
+        &:hover {
+            width: 35px;
+            height: 35px;
+        }
+    }
+    .prev {
+        left: 4%;
+
+        transform: rotate(-45deg) translate3d(50%,-20%,0);
+
+        border-left: 2px solid #fff;
+        box-shadow: inset 11px 11px 30px -30px rgba(0,0,0,.3);
+    }
+    .next {
+        right: 4%;
+
+        transform: rotate(45deg) translate3d(-50%,-20%,0);
+
+        border-right: 2px solid #fff;
+        box-shadow: inset -11px 11px 30px -30px rgba(0,0,0,.3);
+    }
+}
+
+
+// =================== 联系我们 =================
+.view-contactUs {
+    .content {
+        height: calc(100vh - 270px);
+        background: $backColor;
+    }
+    .form {
+        position: relative;
+        top: 50%;
+
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        margin-top: -150px;
+        p {
+            width: 500px;
+            height: 35px;
+            margin-top: 45px;
+
+            border-bottom: 1px solid $textColor;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-top: 60px;
+
+                border-bottom: 0;
+            }
+        }
+        input {
+            width: 435px;
+            height: 35px;
+            margin-left: 20px;
+            padding-left: 10px;
+
+            border: 1px solid #fff;
+            border: 0;
+            outline: none;
+            background: transparent;
+        }
+        .button {
+            line-height: 45px;
+
+            float: right;
+
+            width: 145px;
+            height: 45px;
+
+            text-align: center;
+
+            border: 1px solid $textColor;
+        }
+    }
+}
+
+
+// ==================== 精选 ====================
+.view-recommend {
+    .recommend_list {
+        li {
+            position: relative;
+
+            float: left;
+            overflow: hidden;
+
+            width: calc(100% / 3);
+
+            cursor: pointer;
+            transition: all .3s;
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+                .overlay {
+                    opacity: 0;
+                }
+            }
+            img {
+                display: block;
+
+                transition: transform 2s;
+            }
+            .overlay {
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                transition: opacity 1s;
+
+                opacity: .65;
+                background: #18191a;
+            }
+        }
+    }
+}
