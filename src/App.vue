@@ -25,19 +25,13 @@ export default {
     HeaderNav
   },
   created() {
-    
+
   },
   ready() {
 
   },
   methods: {
-    // routeGo(name) {
-    //   console.log('das');
-    //   var _this = this;
-    //   // _this.$nextTick(function() {
-    //     this.$router.push(name);
-    //   // });
-    // }
+
   }
 }
 </script>
