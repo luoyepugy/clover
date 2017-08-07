@@ -1,78 +1,65 @@
-
 // ==================== 首页 ====================
-.view-index {
-    .slider-item {
-        height: 110%;
-        width: 110%;
-        
-        &:nth-child(1) {
-            background-image: url('../images/index_1.jpg');
-            z-index: 2;
-        }
-        &:nth-child(2) {
-            background-image: url('../images/index_2.jpg');
-            opacity: 0;
-        }
-        &:nth-child(3) {
-            background-image: url('../images/index_3.jpg');
-            opacity: 0;
-        }
-        &:nth-child(4) {
-            background-image: url('../images/index_4.jpg');
-            opacity: 0;
-        }
-
-        &.active {
-            transform: scale3d(1.1,1.1,1) translate3d(-10%,-10%,0);
-        }
-        
-        background-size: cover;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        top: 70px;
-        transition: opacity 1s, transform 8s;
-        // transform: scale3d(1.1,1.1,1) translate3d(-10%,-10%,0);
-        z-index: 1;
-    }
-    .sliderLink {
-        position: absolute;
-        z-index: 100;
-        top: calc(50% + 35px);
-
-        width: 28px;
-        height: 28px;
-
-        cursor: pointer;
-        cursor: pointer;
-        transition: all .3s;
-
-        border-top: 2px solid #fff;
-        outline: 0!important;
-        &:hover {
-            width: 35px;
-            height: 35px;
-        }
-    }
-    .prev {
-        left: 4%;
-
-        transform: rotate(-45deg) translate3d(50%,-20%,0);
-
-        border-left: 2px solid #fff;
-        box-shadow: inset 11px 11px 30px -30px rgba(0,0,0,.3);
-    }
-    .next {
-        right: 4%;
-
-        transform: rotate(45deg) translate3d(-50%,-20%,0);
-
-        border-right: 2px solid #fff;
-        box-shadow: inset -11px 11px 30px -30px rgba(0,0,0,.3);
-    }
-}
-
-
+// .view-index {
+//     .slider-item {
+//         height: 110%;
+//         width: 110%;
+//         &:nth-child(1) {
+//             background-image: url('../images/index_1.jpg');
+//             z-index: 2;
+//         }
+//         &:nth-child(2) {
+//             background-image: url('../images/index_2.jpg');
+//             opacity: 0;
+//         }
+//         &:nth-child(3) {
+//             background-image: url('../images/index_3.jpg');
+//             opacity: 0;
+//         }
+//         &:nth-child(4) {
+//             background-image: url('../images/index_4.jpg');
+//             opacity: 0;
+//         }
+//         &.active {
+//             transform: scale3d(1.1,1.1,1) translate3d(-10%,-10%,0);
+//         }
+//         background-size: cover;
+//         position: absolute;
+//         left: 0;
+//         bottom: 0;
+//         top: 70px;
+//         transition: opacity 1s, transform 8s;
+//         // transform: scale3d(1.1,1.1,1) translate3d(-10%,-10%,0);
+//         z-index: 1;
+//     }
+//     .sliderLink {
+//         position: absolute;
+//         z-index: 100;
+//         top: calc(50% + 35px);
+//         width: 28px;
+//         height: 28px;
+//         cursor: pointer;
+//         cursor: pointer;
+//         transition: all .3s;
+//         border-top: 2px solid #fff;
+//         outline: 0!important;
+//         &:hover {
+//             width: 35px;
+//             height: 35px;
+//         }
+//     }
+//     .prev {
+//         left: 4%;
+//         transform: rotate(-45deg) translate3d(50%,-20%,0);
+//         border-left: 2px solid #fff;
+//         box-shadow: inset 11px 11px 30px -30px rgba(0,0,0,.3);
+//     }
+//     .next {
+//         right: 4%;
+//         transform: rotate(45deg) translate3d(-50%,-20%,0);
+//         border-right: 2px solid #fff;
+//         box-shadow: inset -11px 11px 30px -30px rgba(0,0,0,.3);
+//     }
+// }
 // =================== 联系我们 =================
 .view-contactUs {
     .content {

@@ -1,10 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="./styles/app.min.css" />
-<title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="./styles/app.min.css" />
+    <link rel="stylesheet" href="./styles/jq.slider.min.css" />
+    <title>首页</title>
 </head>
+
 <body>
     <div class="view-index">
         <div class="header">
@@ -20,24 +23,27 @@
                 </ul>
             </div>
         </div>
-        <div class="content"  id="sliderBox">
-            <div class="slider-item"></div>
-            <div class="slider-item"></div>
-            <div class="slider-item"></div>
-            <div class="slider-item"></div>
-            <div class="sliderLinks">
-                <div class="sliderLink prev"></div>
-                <div class="sliderLink next"></div>
+        <div class="content">
+            <div class="slider-box" id="sliderBox">
+                <ul class="slider-list">
+                    <li class="slider-item"><img src="images/index_1.jpg" alt="1" /></li>
+                    <li class="slider-item"><img src="images/index_2.jpg" alt="2" /></li>
+                    <li class="slider-item"><img src="images/index_3.jpg" alt="3" /></li>
+                    <li class="slider-item"><img src="images/index_4.jpg" alt="4" /></li>
+                </ul>
+                <div class="slider-links"></div>
+                <div class="slider-dots"></div>
             </div>
         </div>
     </div>
     <audio id="audio" preload="auto" loop="loop">
-        <source src="../media/audio.mp3" type="audio/mpeg">
+        <source src="./media/audio.mp3" type="audio/mpeg">
     </audio>
-
-    <script data-main="../js/app.js" src="../js/libs/requirejs/require.js"></script>
+    <script src="js/libs/jquery/dist/jquery.min.js"></script>
+    <script data-main="./js/app.js" src="./js/libs/requirejs/require.js"></script>
     <script type="text/javascript">
-        require(['../js/index', '../js/common']);
+    require(['../js/index', '../js/common']);
     </script>
 </body>
+
 </html>

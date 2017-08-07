@@ -1,6 +1,5 @@
 node_modules
 build
-dist
 zip
 docs
 .DS_Store
