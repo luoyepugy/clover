@@ -1,1 +1,1 @@
-define(["jquery","../jq.slider"],function(s,e){s(function(){s("#sliderBox").Slider({isAutoRun:!0,isHoverPause:!0,isThough:!1,showArrow:!0,showDots:!0,dotsClass:"",className:"",animateType:"translate"})})});
+define(["jquery","../jq.slider"],function(s,e){s(function(){s("#sliderBox").Slider({isAutoRun:!0,isHoverPause:!1,isThough:!1,showArrow:!0,showDots:!1,dotsClass:"",className:"",animateType:"translate"})})});

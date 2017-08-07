@@ -3,10 +3,10 @@ define(['jquery', '../jq.slider'], function($, Slider) {
 
         $('#sliderBox').Slider({
             'isAutoRun': true,
-            'isHoverPause': true,
+            'isHoverPause': false,
             'isThough': false,
             'showArrow': true,
-            'showDots': true,
+            'showDots': false,
             'dotsClass': '',
             'className': '',
             'animateType': 'translate'

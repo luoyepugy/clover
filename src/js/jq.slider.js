@@ -1,10 +1,23 @@
 /*
- * slider动画
+ * slider动画插件
  * by zhanghan
  * 2017-07-27
  *
- * 使用示例：
- * $('.slector').slider({
+ * ------------- html使用示例：--------------
+ *  <div class="slider-box" id="sliderBox">
+ *      <ul class="slider-list">
+ *          <li class="slider-item"><img src="images/index_1.jpg" alt="1" /></li>
+ *          <li class="slider-item"><img src="images/index_2.jpg" alt="2" /></li>
+ *          <li class="slider-item"><img src="images/index_3.jpg" alt="3" /></li>
+ *          <li class="slider-item"><img src="images/index_4.jpg" alt="4" /></li>
+ *      </ul>
+ *      <div class="slider-links"></div>
+ *      <div class="slider-dots"></div>
+ * </div>
+ *
+ *
+ * -------------- js使用示例：---------------
+ * $('.sliderBox').slider({
  *  isAutoRun:      true,        // 布尔值,默认为true      是否自动运行动画
  *  isHoverPause:   false,       // 布尔值,默认为false     是否鼠标移上去悬停动画
  *  isThough:       true,        // 布尔值,默认为true      动画是否穿透运行
@@ -12,7 +25,7 @@
  *  showDots:       false,       // 布尔值,默认为false     是否显示底部圆点
  *  dotsClass:      '',          // 字符串,默认为''        圆点区域样式名称
  *  className:      '',          // 字符串,默认为''        整体区域样式名称
- *  animateType:    'translate'       // 字符串,默认为'fade'    动画运行类型：有'fade'(淡入淡出)、'translate'(平移)、''(无)
+ *  animateType:    'translate'  // 字符串,默认为'fade'    动画运行类型：有'fade'(淡入淡出)、'translate'(平移)、''(无)
  * });
  *
  */
