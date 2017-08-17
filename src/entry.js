@@ -6,4 +6,7 @@ import './scss/app.scss';
 
 
 //引入组件
-import './components/App.js';
+import './components/Header.js';
+
+// 路由
+import './config/routes.js';
